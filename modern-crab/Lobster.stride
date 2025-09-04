@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="Lobster" extends="Actor" extends-java="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields/>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" type-java="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the Lobster wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="move(4)" expression-java="move(4)" enable="true"/>
+                <if condition="Greenfoot.isKeyDown(&quot;A&quot;)" condition-java="Greenfoot.isKeyDown(&quot;A&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="turn(-3)" expression-java="turn(-3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;d&quot;)" condition-java="Greenfoot.isKeyDown(&quot;d&quot;)" enable="true">
+                    <ifStatements>
+                        <call expression="turn(3)" expression-java="turn(3)" enable="true"/>
+                    </ifStatements>
+                </if>
+                <if condition="Greenfoot.isKeyDown(&quot;E&quot;)" condition-java="Greenfoot.isKeyDown(&quot;E&quot;)" enable="true">
+                    <ifStatements>
+                        <if condition="Greenfoot.ask(&quot;Eat?&quot;).equalsIgnoreCase(&quot;yes&quot;)" condition-java="Greenfoot.ask(&quot;Eat?&quot;).equalsIgnoreCase(&quot;yes&quot;)" enable="true">
+                            <ifStatements>
+                                <call expression="Greenfoot.playSound(&quot;eating.wav&quot;)" expression-java="Greenfoot.playSound(&quot;eating.wav&quot;)" enable="true"/>
+                            </ifStatements>
+                            <else>
+                                <call expression="Greenfoot.ask(&quot;You Sure?&quot;)" expression-java="Greenfoot.ask(&quot;You Sure?&quot;)" enable="true"/>
+                            </else>
+                        </if>
+                    </ifStatements>
+                </if>
+            </body>
+        </method>
+    </methods>
+</class>
