@@ -15,5 +15,15 @@ public class Crab extends Actor
      */
     public void act()
     {
+        move(4);
+        if (Greenfoot.isKeyDown("left")) {
+            /* Higher value for turn() lead to a tighter turn*/
+            turn(-3);
+        }
+        if (Greenfoot.isKeyDown("right")) {
+            turn(3);
+        }
+        /* When both left and right are pressed, the crab attempts to turn both -3 Deg and 3 Deg, this cancels out and the crabs go straight*/
+        
     }
 }
